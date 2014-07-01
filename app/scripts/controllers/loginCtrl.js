@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('loginModule', ['ezfb'])
   .controller('loginCtrl', function ($scope, ezfb) {
 
