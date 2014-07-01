@@ -51,3 +51,4 @@ angular.module('loginModule', ['ezfb'])
       appId: '219971484754812'
     });
   });
+  
