@@ -9,7 +9,7 @@ angular.module('loginModule', ['ezfb'])
     $scope.setUser = function ($name) {
       $scope.userName = $name;
     };
-    
+
     $scope.login = function () {
       ezfb.login(function (res) {
         if (res.authResponse) {
@@ -27,7 +27,7 @@ angular.module('loginModule', ['ezfb'])
     function updateLoginStatus (more) {
       ezfb.getLoginStatus(function (res) {
         $scope.loginStatus = res;
-        
+
         if ($scope.loginStatus.status === 'connected')
           $scope.isLoggedIn = true;
         else

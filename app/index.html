@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="sampleAppApp">
+  <body ng-app="DoRepeatApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -50,13 +50,16 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-easyfb/angular-easyfb.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <!-- <script src="scripts/app.js"></script> -->
-        <script src="scripts/login/controllers/loginCtrl.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/loginCtrl.js"></script>
+        <script src="scripts/controllers/MainCtrl.js"></script>
+        <script src="scripts/controllers/UpdateCtrl.js"></script>
+        <script src="scripts/services/RepeatHandleSvc.js"></script>
         <!-- endbuild -->
 </body>
 </html>

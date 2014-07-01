@@ -7,6 +7,7 @@
     "es5-shim": "~2.1.0",
     "jquery": "~1.11.0",
     "bootstrap": "~3.0.3",
+    "angular-resource": "~1.2.18",
     "angular-route": "~1.2.18",
     "angular-easyfb": "~1.0.1"
   },
