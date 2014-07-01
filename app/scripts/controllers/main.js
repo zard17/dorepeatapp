@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('sampleAppApp', ['ngRoute'])
+angular.module('sampleAppApp', ['ngRoute', 'loginModule'])
+
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
@@ -35,7 +36,7 @@ angular.module('sampleAppApp', ['ngRoute'])
     }
   })
 
-  .config(function($routeProvider) {
+  .config(function ($routeProvider) {
   	$routeProvider
       .when('/my_repeats', {templateUrl: 'scripts/templates/my_repeats.tmpl.html'})
   		.when('/create_repeat', {templateUrl: 'scripts/templates/create_repeat.tmpl.html'})
