@@ -2,7 +2,7 @@
 
 angular.module('DoRepeatApp', []);
 angular.module('DoRepeatApp', ['ngRoute']);
-angular.module('DoRepeatApp', ['DoRepeatApp.controller']);
+angular.module('DoRepeatApp', ['DoRepeatApp.controller', 'loginModule']);
 
 angular.module('DoRepeatApp.controller', ['ngRoute', 'DoRepeatApp.service']);
 angular.module('DoRepeatApp.service', ['ngResource']);

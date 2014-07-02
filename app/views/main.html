@@ -33,9 +33,11 @@
                 </ul>
               </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" ng-controller="loginCtrl">
               <li class="active"><a href="./">Sign Up</a></li>
-              <li><a href="../navbar-static-top/">Log In</a></li>
+              <li ng-hide="isLoggedIn"><a href="" ng-click="login()">LogIn</a></li>
+              <li ng-show="isLoggedIn"><a href="" ng-click="logout()">Logout</a></li>
+              <div id="fb-root"></div>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
