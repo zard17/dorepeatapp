@@ -7,22 +7,38 @@ angular.module('DoRepeatApp.service')
       {"title": "Eat lunch", "description": "Eat fresh food without meat", "checklist": ['drink milk'], "show" : false}
     ];
 
+    var repeatIndexToUpdate = 0;
+
 		return {
 			addNewRepeat: function (newRepeat) {
 				repeatList.push(newRepeat);
 				console.log('Repeat List Length = ' + repeatList.length);
 			},
 
-			updateRepeat: function (idx, updatedRepeat) {
-				repeatList[idx] = updatedRepeat;
+			updateRepeat: function (updatedRepeat, index) {
+				repeatList[index] = updatedRepeat;
 			},
 
-			deleteRepeat: function (idx) {
-				repeatList.splice(idx, 1);
+			deleteRepeat: function (index) {
+				repeatList.splice(index, 1);
 			},
 
 			selectRepeat: function () {
 				return repeatList;
+			},
+
+			selectRepeatByIndex: function (index) {
+				return repeatList[index];
+			},
+
+			setRepeatIndexToUpdate: function (index) {
+				repeatIndexToUpdate = index;				
+			},
+
+			getRepeatIndexToUpdate: function () {
+				console.log('[RepeatHandleSvc] repeatIndexToUpdate = ' + repeatIndexToUpdate);
+				return repeatIndexToUpdate;
 			}
+				
 		}
 	}]);

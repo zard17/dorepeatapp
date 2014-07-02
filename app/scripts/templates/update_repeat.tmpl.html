@@ -1,7 +1,11 @@
-<p>Update My Repeat</p>
-Title: <input type="text" ng-model="repeat.title" value="{{repeat.title}}"><br>
-Description: <input type="text" ng-model="repeat.description" value="{{repeat.description}}"><br>
-Checklist: <input type="text" ng-model="repeat.checklist" value={{repeat.checklist}}>
-	<button type="button" class="btn btn-default" ng-click="add_checklist_input(repeat)">+</button><br>
-<a href="/#/my_repeats"><button type="button" class="btn btn-default" ng-click="save_repeat()">save</button></a>
-{{$routeParams}}
+<div>
+	<h2>Update My Repeat</h2>
+	Title: <input type="text" ng-model="repeatToUpdate.title" value={{repeatToUpdate.title}}>
+	<br>
+	Description: <input type="text" ng-model="repeatToUpdate.description" value={{repeatToUpdate.description}}>
+	<br>
+	Checklist: <input type="text" ng-model="repeatToUpdate.checklist" value={{repeatToUpdate.checklist}}>
+		<button type="button" class="btn btn-default" ng-click="add_checklist_input(repeat)">+</button>
+		<br>
+	<a href="/#/my_repeats"><button type="button" class="btn btn-default" ng-click="updateRepeat()">save</button></a>
+</div>

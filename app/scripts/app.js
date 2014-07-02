@@ -13,8 +13,8 @@ angular.module('DoRepeatApp')
         templateUrl: 'scripts/templates/my_repeats.tmpl.html', 
         controller: 'ShowRepeatCtrl'})
       .when('/create_repeat', {
-        templateUrl: 'scripts/templates/create_repeat.tmpl.html'
-        })
+        templateUrl: 'scripts/templates/create_repeat.tmpl.html',
+        controller: 'CreateRepeatCtrl'})
       .when('/update_repeat', {
         templateUrl: 'scripts/templates/update_repeat.tmpl.html', 
         controller: 'UpdateRepeatCtrl'})
