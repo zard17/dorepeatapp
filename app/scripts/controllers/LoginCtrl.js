@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('loginModule', ['ezfb'])
-  .controller('loginCtrl', function ($scope, ezfb) {
+angular.module('DoRepeatApp.controller')
+  .controller('LoginCtrl', function ($scope, ezfb) {
 
     $scope.isLoggedIn = false;
     $scope.userName = 'anonymouse';
