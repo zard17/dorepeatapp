@@ -1,18 +1,11 @@
 'use strict';
 
 angular.module('DoRepeatApp.controller')
-  .controller('MainCtrl', ['$scope', 'RepeatResource', function ($scope, RepeatResource) {
+  .controller('MainCtrl', function ($scope) {
 
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  }]);
-
-
-
-
-
-
-
+  });

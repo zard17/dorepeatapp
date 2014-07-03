@@ -6,6 +6,25 @@ angular.module('DoRepeatApp.controller')
     $scope.isLoggedIn = false;
     $scope.userName = 'anonymouse';
 
+    function updateApiMe () {
+      ezfb.api('/me', function (res) {
+        $scope.apiMe = res;
+      });
+    }
+
+    function updateLoginStatus (more) {
+      ezfb.getLoginStatus(function (res) {
+        $scope.loginStatus = res;
+
+        if ($scope.loginStatus.status === 'connected') {
+          $scope.isLoggedIn = true;
+        } else {
+          $scope.isLoggedIn = false;
+        }
+
+        (more || angular.noop)();
+      });
+    }
     updateLoginStatus(updateApiMe);
 
     $scope.setUser = function ($name) {
@@ -26,24 +45,6 @@ angular.module('DoRepeatApp.controller')
       });
     };
 
-    function updateLoginStatus (more) {
-      ezfb.getLoginStatus(function (res) {
-        $scope.loginStatus = res;
-
-        if ($scope.loginStatus.status === 'connected')
-          $scope.isLoggedIn = true;
-        else
-          $scope.isLoggedIn = false;
-
-        (more || angular.noop)();
-      });
-    }
-
-    function updateApiMe () {
-      ezfb.api('/me', function (res) {
-        $scope.apiMe = res;
-      });
-    }
   })
 
   .run(function(ezfb) {

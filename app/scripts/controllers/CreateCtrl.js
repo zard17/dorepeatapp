@@ -1,15 +1,14 @@
 'use strict';
 
 angular.module('DoRepeatApp.controller')
-  .controller('CreateRepeatCtrl', ['$scope', 'RepeatResource', function ($scope, RepeatResource) {
+  .controller('CreateRepeatCtrl', function ($scope, RepeatHandle) {
 
     $scope.repeatContainer = {};
-    $scope.repeatList = RepeatResource.selectRepeat();
 
     $scope.saveRepeat = function () {
       console.log($scope.repeatContainer.title);
       console.log($scope.repeatContainer.description);
       console.log($scope.repeatContainer.checklist);
-      RepeatResource.addNewRepeat($scope.repeatContainer);
-    }
-  }]);
+      RepeatHandle.addNewRepeat($scope.repeatContainer);
+    };
+  });

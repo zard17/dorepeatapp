@@ -1,25 +1,28 @@
 'use strict';
 
 angular.module('DoRepeatApp.controller')
-  .controller('ShowRepeatCtrl', ['$scope', 'RepeatResource', function ($scope, RepeatResource, $route, $routeParams, $location) {
+  .controller('ShowRepeatCtrl', function ($scope, RepeatHandle, $routeParams) {
 
     $scope.routeParams = $routeParams;
     console.log($scope.routeParams);
 
-    $scope.repeatList = RepeatResource.selectRepeat();
+    function setRepeatListCallback(repeatList) {
+      $scope.repeatList = repeatList;
+    }
+    RepeatHandle.selectRepeatList(setRepeatListCallback);
 
     $scope.setRepeatIndexToUpdate = function (index) {
-      RepeatResource.setRepeatIndexToUpdate(index);
+      RepeatHandle.setRepeatIndexToUpdate(index);
       console.log('repeatIndexToUpdate = ' + $scope.getRepeatIndexToUpdate());
-      
-    }
+    };
+
     $scope.getRepeatIndexToUpdate = function () {
-      return RepeatResource.getRepeatIndexToUpdate();
-    }
+      return RepeatHandle.getRepeatIndexToUpdate();
+    };
 
     // handle template event
     $scope.setRepeatShow = function (title, $index) {
       console.log($index + ' ' + title + ' ' + $scope.repeatList[$index].show);
-      $scope.repeatList[$index].show ? $scope.repeatList[$index].show = false : $scope.repeatList[$index].show = true;
-    }
-  }]);
+      $scope.repeatList[$index] = $scope.repeatList[$index] ? false : true;
+    };
+  });
